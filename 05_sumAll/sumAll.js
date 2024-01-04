@@ -1,4 +1,6 @@
 const sumAll = function(num1, num2) {
+    
+    // create variable tot 
     let tot = 0;
     let bigger, smaller;
 
