@@ -1,0 +1,12 @@
+#rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  #btnRate {
+      height: 30px;
+      width: 90px;
+    background-color: #886767;
+    border-radius: 10px;
+  }

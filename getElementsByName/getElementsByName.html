@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript getElementsByName Demo</title>
+    <link rel="stylesheet" type="text/css" href="./getelements.css" />
+</head>
+
+<body>
+    <p>Please rate the service:</p>
+    <p id="rating">
+        <label for="very-poor">
+            <input type="radio" name="rate" value="Very Poor" id="very-poor"> Very poor
+        </label>
+        <label for="poor">
+            <input type="radio" name="rate" value="Poor" id="poor"> Poor
+        </label>
+        <label for="ok">
+            <input type="radio" name="rate" value="OK" id="ok"> OK
+        </label>
+        <label for="good">
+            <input id="good" type="radio" name="rate" value="Good"> Good
+        </label>
+        <label for="very-good">
+            <input type="radio" name="rate" value="Very Good" id="very-good"> Very Good
+        </label>
+        <label for="exceptional">
+            <input type="radio" name="rate" value="Exceptional" id="exceptional"> Exceptional
+        </label>
+        <label for="perfect">
+            <input type="radio" name="rate" value="Perfect" id="perfect"> Perfect
+        </label>
+        <label for="more-perfect">
+            <input id="more-perfect" type="radio" name="rate" value="More Perfect"> More Perfect
+        </label>
+        <label for="most-perfect">
+            <input id="most-perfect" type="radio" name="rate" value="Most Perfect"> Most Perfect
+        </label>
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <p id="output"></p>
+    
+    <script>
+        let btn = document.getElementById('btnRate');
+        let output = document.getElementById('output');
+
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    output.innerText = `You selected: ${rate.value}`;
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
