@@ -6,20 +6,28 @@
 <body>
     <h1>JavaScript <em>getElementsByTagName()</em> Demo</h1>
     <h2>First heading</h2>
+    <h3>First h3 tag</h3>
     <p>This is the <em>first</em> paragraph.</p>
     <h2>Second heading</h2>
+    <h3>Second h3 tag</h3>
     <p>This is the <em>second</em> paragraph.</p>
     <h2>Third heading</h2>
+    <h3>Third h3 tag</h3>
     <p>This is the <em>third</em> paragraph.</p>
 
     <button id="btnCount">Count H2</button>
     <button id="btnCount2">Count p</button>
     <button id="btnCount3">Count em</button>
+    <button id="btnCount4">Count h3</button>
+
     <script>
         let btn = document.getElementById('btnCount');
         let btn2 = document.getElementById('btnCount2');
         let btn3 = document.getElementById('btnCount3');
+        let btn4 = document.getElementById('btnCount4');
 
+
+        // using Arrow function notation
         btn.addEventListener('click', () => {
             let headings = document.getElementsByTagName('h2');
             headings[0].style.color = 'red';
@@ -27,15 +35,9 @@
             headings[2].style.color = 'green';
             alert(`The number of h2 tags: ${headings.length}`);
         });
-        // btn2.addEventListener('click', () => {
-        //     let paragraphs = document.getElementsByTagName('p');
-        //     paragraphs[0].style.color = 'orange';
-        //     paragraphs[1].style.color = 'gray';
-        //     paragraphs[2].style.color = 'violet';
-        //     alert(`The number of p tags: ${paragraphs.length}`);
-        // });
-
+        
         btn2.addEventListener('click', getTags);
+        
         function getTags()
         {
             let paragraphs = document.getElementsByTagName('p');
@@ -46,8 +48,10 @@
         }
 
         btn3.addEventListener('click', getEm);
+
         function getEm() 
-        {
+        {   
+            // Create a NodeList of em tags
             let emz = document.getElementsByTagName("em");
             emz[0].style.color = "yellow";
             emz[1].style.color = "indigo";
@@ -56,6 +60,22 @@
             alert(`The number of em tags: ${emz.length}`);
         }
 
+        btn4.addEventListener('click', geth3);
+        function geth3() 
+        {   // create a NOdeList of h3 tags
+            let h3s = document.getElementsByTagName("h3");
+            // Now create a proper Array from the NodeList
+            let h3sArray = Array.from(h3s);
+            h3sArray.forEach((h3tag) => h3tag.style.color = "orange" );
+            h3sArray.forEach((h3tag) => h3tag.style.backgroundColor = "gray" );
+            h3sArray.forEach((h3tag) => h3tag.style.fontSize = "30px" );
+            h3sArray.forEach((h3tag) => h3tag.style.padding = "10px" );
+            h3sArray[0].style.color = "yellow";
+            h3sArray[1].style.color = "indigo";
+            h3sArray[2].style.color = "red";
+            // emz[0].style.color = "darkblue";
+            alert(`The number of em tags: ${emz.length}`);
+        }
     </script>
 </body>
 
