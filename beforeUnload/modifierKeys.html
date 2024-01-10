@@ -10,16 +10,38 @@
     <script>
         let btnKeys = document.querySelector('#btnKeys');
 
-        btnKeys.addEventListener('click', (e) => {
+        btnKeys.addEventListener('click', (event) => {
             let keys = [];
 
-            if (e.shiftKey) keys.push('shift');
-            if (e.ctrlKey) keys.push('ctrl');
-            if (e.altKey) keys.push('alt');
-            if (e.metaKey) keys.push('meta');
-
+            if (event.shiftKey) 
+            {
+                keys.push('shift');
+            }
+            if (event.ctrlKey) 
+            {
+                keys.push('ctrl');
+            }
+            if (event.altKey) 
+            {
+                keys.push('alt');
+            }
+            if (event.metaKey) 
+            {
+                keys.push('meta');
+            }
             let msg = document.querySelector('#messageKeys');
-            msg.textContent = `Keys: ${keys.join('+')}`;
+            if(keys.length > 1)
+            {
+                msg.textContent = `Keys: ${keys.join(' and ')} were pressed! `;
+            }
+            if(keys.length == 1)
+            {
+                msg.textContent = `Key: ${keys} was pressed! `;
+            }
+            else 
+            {
+                msg.textContent = "";
+            }
         });
     </script>
 </body>
