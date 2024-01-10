@@ -1,3 +1,13 @@
+<!-- DETECTING MOUSE BUTTONS
+    The event object passed to the mouse event handler has a property called button that indicates which mouse button was pressed on the mouse to trigger the event.
+
+    The mouse button is represented by a number:
+
+    0: the main mouse button is pressed, usually the left button.
+    1: the auxiliary button is pressed, usually the middle button or the wheel button.
+    2: the secondary button is pressed, usually the right button.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +62,7 @@
         //     }
         // });
         // Make a reference to the function in addEventListener    
-        btn.addEventListener('mouseup', mouseFire );
+        btn.addEventListener('mouseup', mouseFire);
         
         function mouseFire(e) 
         {
