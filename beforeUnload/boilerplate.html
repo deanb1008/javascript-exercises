@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <ul id="menu">
+            <li><a id="home">home</a></li>
+            <li><a id="dashboard">Dashboard</a></li>
+            <li><a id="report">report</a></li>
+        </ul>
+        <script src="" async defer>
+                let home = document.querySelector('#home');
+                home.addEventListener('click',(event) => {
+                    console.log('Home menu item was clicked');
+                });
+
+                let dashboard = document.querySelector('#dashboard');
+                dashboard.addEventListener('click',(event) => {
+                    console.log('Dashboard menu item was clicked');
+                });
+
+                let report = document.querySelector('#report');
+                report.addEventListener('click',(event) => {
+                    console.log('Report menu item was clicked');
+                });
+
+        </script>
+    </body>
+</html>

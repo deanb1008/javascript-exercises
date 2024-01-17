@@ -1,0 +1,67 @@
+<!--
+    Summary: in this tutorial, you will learn how to use the JavaScript event delegation that adds a single event handler to the parent element instead of having to register multiple event handlers to the child elements.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <ul id="menu">
+            <li><a id="home">home</a></li>
+            <li><a id="dashboard">Dashboard</a></li>
+            <li><a id="report">report</a></li>
+        </ul>
+
+        <ul id="menu2">
+            <li><a id="home2">home</a></li>
+            <li><a id="dashboard2">Dashboard</a></li>
+            <li><a id="report2">report</a></li>
+        </ul>
+
+        <script>
+                // Standard way to assign event handler to three elements
+     
+                let home = document.querySelector('#home');
+                home.addEventListener('click',(event) => {
+                    console.log('Home menu item was clicked');
+                });
+
+                let dashboard = document.querySelector('#dashboard');
+                dashboard.addEventListener('click',(event) => {
+                    console.log('Dashboard menu item was clicked');
+                });
+
+                let report = document.querySelector('#report');
+                report.addEventListener('click',(event) => {
+                    console.log('Report menu item was clicked');
+                });
+
+                // Using bubbling => up to parent element, #menu2
+                let menu2 = document.querySelector('#menu2');
+
+                menu2.addEventListener('click', (event) => {
+                let target = event.target;
+                    // target is #menu2
+                switch(target.id) {
+                    case 'home2':
+                        console.log('Home menu item was clicked');
+                        break;
+                    case 'dashboard2':
+                        console.log('Dashboard menu item was clicked');
+                        break;
+                    case 'report2':
+                        console.log('Report menu item was clicked');
+                        break;
+                }
+            });
+
+        </script>
+    </body>
+</html>
